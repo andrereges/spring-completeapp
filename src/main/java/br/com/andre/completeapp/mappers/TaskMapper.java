@@ -1,6 +1,6 @@
 package br.com.andre.completeapp.mappers;
 
-import br.com.andre.completeapp.domains.Task;
+import br.com.andre.completeapp.models.Task;
 import br.com.andre.completeapp.dtos.TaskCreateRequestDto;
 import br.com.andre.completeapp.dtos.TaskResponseDto;
 import br.com.andre.completeapp.dtos.TaskUpdateRequestDto;

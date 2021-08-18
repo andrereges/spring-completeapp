@@ -1,9 +1,6 @@
-package br.com.andre.completeapp.domains;
+package br.com.andre.completeapp.models;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
@@ -15,6 +12,8 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @Entity
 @Builder
+@ToString(of = {"id", "name"})
+@EqualsAndHashCode(of = {"id", "name", "done", "createAt"})
 public class Task {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -29,5 +28,15 @@ public class Task {
     @CreationTimestamp
     @Column(columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
     private LocalDateTime createdAt;
+
+    public Task(String name) {
+        if (name == null || name.isEmpty())
+            throw new IllegalArgumentException("The task name cannot be empty");
+    }
+
+    public void setName(String name) {
+        if (name == null || name.isEmpty())
+            throw new IllegalArgumentException("The task name cannot be empty");
+    }
 
 }

@@ -1,6 +1,6 @@
 package br.com.andre.completeapp.services;
 
-import br.com.andre.completeapp.domains.Task;
+import br.com.andre.completeapp.models.Task;
 import br.com.andre.completeapp.dtos.TaskCreateRequestDto;
 import br.com.andre.completeapp.dtos.TaskUpdateRequestDto;
 import org.springframework.data.domain.Page;

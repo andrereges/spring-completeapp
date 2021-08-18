@@ -1,6 +1,6 @@
 package br.com.andre.completeapp.repositories;
 
-import br.com.andre.completeapp.domains.Task;
+import br.com.andre.completeapp.models.Task;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
