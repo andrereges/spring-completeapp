@@ -7,6 +7,10 @@ server:
   error:
     include-stacktrace: on_param
 
+springdoc:
+  swagger-ui.path: /swagger-ui.html
+  show-actuator: true
+
 spring:
   application:
     name: spring-completeapp
@@ -25,6 +29,6 @@ spring:
           SQL: DEBUG
 
   info:
-    app: Complete APP Spring Boot by Andrê Reges
+    app: Complete APP Spring Boot by Andrï¿½ Reges
     website: https://github.com/andrereges/
     github: https://github.com/andrereges/spring-completeapp

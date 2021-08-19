@@ -5,8 +5,13 @@ import br.com.andre.completeapp.dtos.TaskResponseDto;
 import br.com.andre.completeapp.dtos.TaskUpdateRequestDto;
 import br.com.andre.completeapp.mappers.TaskMapper;
 import br.com.andre.completeapp.services.TaskService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
+import org.springdoc.api.annotations.ParameterObject;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -22,7 +27,12 @@ public class TaskController {
     private final TaskService taskService;
 
     @GetMapping
-    public ResponseEntity<?> list(Pageable pageable) {
+    @Operation(
+        summary = "List all tasks paginated",
+        description = "The default size is 20, use the parameter size to change the default value",
+        tags = {"Task"}
+    )
+    public ResponseEntity<?> list(@ParameterObject Pageable pageable) {
         return ResponseEntity.ok(
             TaskMapper.INSTANCE.toDtoPage(taskService.listAll(pageable))
         );
@@ -36,7 +46,7 @@ public class TaskController {
     }
 
     @GetMapping(path = "/find-by-name")
-    public ResponseEntity<?> findByName(Pageable pageable, @RequestParam String name) {
+    public ResponseEntity<?> findByName(@ParameterObject Pageable pageable, @RequestParam String name) {
         return ResponseEntity.ok(
             TaskMapper.INSTANCE.toDtoPage(taskService.findByName(pageable, name))
         );
@@ -57,6 +67,11 @@ public class TaskController {
     }
 
     @DeleteMapping(path = "/admin/{id}")
+    @ApiResponses({
+        @ApiResponse(responseCode = "200", description = "Successful Operation"),
+        @ApiResponse(responseCode = "400", description = "When task not exists in database"),
+        @ApiResponse(responseCode = "403", description = "Logged user doesn't authorization to execute this action")
+    })
     public ResponseEntity<Void> delete(@PathVariable long id) {
         taskService.delete(id);
 
