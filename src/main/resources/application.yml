@@ -11,7 +11,7 @@ management:
   endpoints:
     web:
       exposure:
-        include: info, health, metrics
+        include: info, health, metrics, prometheus
 
 info:
   app: Complete APP Spring Boot by Andrê Reges
@@ -24,7 +24,7 @@ springdoc:
 
 spring:
   application:
-    name: spring-completeapp
+    name: spring-complete-app
 
   profiles:
     active: ${APP_PROFILE:dev}

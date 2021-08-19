@@ -1,8 +1,8 @@
 global:
   scrape_interval:     15s # By default, scrape targets every 15 seconds.
 
-  # Attach these labels to any time series or alerts when communicating with
-  # external systems (federation, remote storage, Alertmanager).
+# Attach these labels to any time series or alerts when communicating with
+# external systems (federation, remote storage, Alertmanager).
 #  external_labels:
 #    monitor: 'codelab-monitor'
 
@@ -10,18 +10,19 @@ global:
 # Here it's Prometheus itself.
 scrape_configs:
   # The job name is added as a label `job=<job_name>` to any timeseries scraped from this config.
-  #  - job_name: 'prometheus'
-  #
-  #    # Override the global default and scrape targets from this job every 5 seconds.
-  #    scrape_interval: 5s
-  #
-  #    static_configs:
-  #      - targets: ['localhost:9090']
+#  - job_name: 'prometheus'
+#
+#    # Override the global default and scrape targets from this job every 5 seconds.
+#    scrape_interval: 5s
+#
+#    static_configs:
+#      - targets: ['localhost:9090']
 
-  - job_name: 'springboot-essentials-actuator'
+  - job_name: 'spring-complete-app-actuator'
 
     # Override the global default and scrape targets from this job every 5 seconds.
     scrape_interval: 5s
     metrics_path: "/actuator/prometheus"
     static_configs:
-      - targets: ['host.docker.internal:8080']
+      - targets: ['192.168.10.10:8080']
+#      - targets: ['host.docker.internal:8080']
