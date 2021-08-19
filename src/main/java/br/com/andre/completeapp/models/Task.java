@@ -28,15 +28,4 @@ public class Task {
     @CreationTimestamp
     @Column(columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
     private LocalDateTime createdAt;
-
-    public Task(String name) {
-        if (name == null || name.isEmpty())
-            throw new IllegalArgumentException("The task name cannot be empty");
-    }
-
-    public void setName(String name) {
-        if (name == null || name.isEmpty())
-            throw new IllegalArgumentException("The task name cannot be empty");
-    }
-
 }

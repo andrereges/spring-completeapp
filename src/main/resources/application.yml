@@ -1,4 +1,9 @@
+debug: false
+
 server:
+  servlet:
+    session:
+      tracking-modes: cookie
   error:
     include-stacktrace: on_param
 
