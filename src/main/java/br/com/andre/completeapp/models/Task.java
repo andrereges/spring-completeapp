@@ -7,10 +7,11 @@ import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import java.time.LocalDateTime;
 
+@Entity
+@Table(name = "tasks")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity
 @Builder
 @ToString(of = {"id", "name"})
 @EqualsAndHashCode(of = {"id", "name", "done", "createAt"})

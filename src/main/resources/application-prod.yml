@@ -1,0 +1,13 @@
+spring:
+  config:
+    use-legacy-processing: true
+    activate:
+      on-profile: prod
+
+  datasource:
+    url: ${DATABASE_URL}
+
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
