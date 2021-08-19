@@ -7,6 +7,17 @@ server:
   error:
     include-stacktrace: on_param
 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: info, health, metrics
+
+info:
+  app: Complete APP Spring Boot by Andrê Reges
+  website: https://github.com/andrereges/
+  github: https://github.com/andrereges/spring-completeapp
+
 springdoc:
   swagger-ui.path: /swagger-ui.html
   show-actuator: true
@@ -27,8 +38,3 @@ spring:
       org:
         hibernate:
           SQL: DEBUG
-
-  info:
-    app: Complete APP Spring Boot by Andr� Reges
-    website: https://github.com/andrereges/
-    github: https://github.com/andrereges/spring-completeapp

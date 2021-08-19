@@ -6,7 +6,6 @@ import br.com.andre.completeapp.dtos.TaskUpdateRequestDto;
 import br.com.andre.completeapp.mappers.TaskMapper;
 import br.com.andre.completeapp.services.TaskService;
 import io.swagger.v3.oas.annotations.Operation;
-import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import lombok.RequiredArgsConstructor;
