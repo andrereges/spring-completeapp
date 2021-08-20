@@ -24,22 +24,22 @@ public class OpenApiConfig {
         };
 
         return GroupedOpenApi.builder()
-                .group(pomModel.getName().concat(" API Version 1"))
+                .group("API Version 1")
                 .pathsToMatch(paths)
                 .packagesToScan(packagesToscan)
                 .build();
     }
 
-    @Bean
-    public OpenAPI customOpenAPI() {
-        return new OpenAPI()
-            .info(new Info()
-                .title(pomModel.getName())
-                .version(pomModel.getVersion())
-                .description(pomModel.getDescription())
-                .termsOfService("http://swagger.io/terms/")
-                .license(new License().name("Apache 2.0")
-                .url(pomModel.getUrl()))
-            );
-    }
+//    @Bean
+//    public OpenAPI customOpenAPI() {
+//        return new OpenAPI()
+//            .info(new Info()
+//                .title(pomModel.getName())
+//                .version(pomModel.getVersion())
+//                .description(pomModel.getDescription())
+//                .termsOfService("http://swagger.io/terms/")
+//                .license(new License().name("Apache 2.0")
+//                .url(pomModel.getUrl()))
+//            );
+//    }
 }

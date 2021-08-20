@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class AppEndToEndApplication {
+public class SpringCompleteAppApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(AppEndToEndApplication.class, args);
+		SpringApplication.run(SpringCompleteAppApplication.class, args);
 	}
 
 }

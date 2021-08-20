@@ -53,6 +53,7 @@
 		<springdoc-openapi-ui.version>1.5.10</springdoc-openapi-ui.version>
 
 		<org.apache.maven.version>3.3.9</org.apache.maven.version>
+
 		<jib-maven-plugin.version>3.1.4</jib-maven-plugin.version>
 		<docker.distroless.image>gcr.io/distroless/java:11</docker.distroless.image>
 		<docker.repo.url>andreriggs</docker.repo.url>
@@ -174,7 +175,7 @@
 						</tags>
 					</to>
 					<container>
-						<mainClass>br.com.andre.completeapp.AppEndToEndApplication</mainClass>
+						<mainClass>br.com.andre.completeapp.SpringCompleteAppApplication</mainClass>
 					</container>
 				</configuration>
 			</plugin>
